@@ -1,7 +1,19 @@
 [project]
 name = "build-with-gemini"
 version = "0.1.0"
-description = "Add your description here"
+description = "Pit Detection for Afforestation Ground Truth Generation"
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.12"
+dependencies = [
+    "opencv-python>=4.8.0",
+    "rasterio>=1.3.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "scipy>=1.11.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+]
+
+[project.scripts]
+detect-pits = "src.phase1_pit_detection:main"
+visualize-pits = "src.visualize:main"
